@@ -177,17 +177,25 @@
 
     <script>
         document.addEventListener("keydown", function (e) {
-            if (e.code === "Space") {
+            const slideNext = {{.Next}};
+            const slidePrev = {{.Prev}};
+
+            // Prevent default scrolling behavior for certain keys
+            const nextKeys = ["Space", "ArrowRight", "PageDown", "Enter"];
+            const prevKeys = ["ArrowLeft", "PageUp"];
+
+            if (nextKeys.includes(e.code)) {
                 e.preventDefault();
-                window.location.href = "/slides/{{.Next}}";
+                if (slideNext > 0) {
+                    window.location.href = "/slides/" + slideNext;
+                }
             }
 
-            if (e.code === "ArrowLeft" && {{.Prev}} > 0) {
-                window.location.href = "/slides/{{.Prev}}";
-            }
-
-            if (e.code === "ArrowRight" && {{.Next}} > 0) {
-                window.location.href = "/slides/{{.Next}}";
+            if (prevKeys.includes(e.code)) {
+                e.preventDefault();
+                if (slidePrev > 0) {
+                    window.location.href = "/slides/" + slidePrev;
+                }
             }
         });
     </script>
