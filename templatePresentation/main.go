@@ -63,6 +63,7 @@ func loadTemplates() (*Templates, error) {
 		"templatePresentation/templates/titleSlide.html",
 		"templatePresentation/templates/whatIsTemplating.html",
 		"templatePresentation/templates/whyTemplating.html",
+		"templatePresentation/templates/codeProtection.html",
 		"templatePresentation/templates/templateExampleWithNoData.html",
 		"templatePresentation/templates/addingDataIntoTemplating.html",
 		"templatePresentation/templates/passingFunctionsThroughTemplating.html",
