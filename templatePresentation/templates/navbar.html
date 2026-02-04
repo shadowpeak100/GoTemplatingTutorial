@@ -1,0 +1,21 @@
+{{ define "nav" }}
+<nav>
+    <div class="links">
+        {{ if gt .Slide 1 }}
+        <a href="/slides/{{ .Prev }}">&larr;</a>
+        {{ else }}
+        <span class="disabled">&larr;</span>
+        {{ end }}
+
+        <span class="counter">
+            {{ .Slide }} / {{ .Total }}
+        </span>
+
+        {{ if lt .Slide .Total }}
+        <a href="/slides/{{ .Next }}">&rarr;</a>
+        {{ else }}
+        <span class="disabled">&rarr;</span>
+        {{ end }}
+    </div>
+</nav>
+{{ end }}

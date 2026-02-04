@@ -1,0 +1,11 @@
+{{ define "content" }}
+<h1>What is Templating?</h1>
+<ul>
+    <li>A standard library package allowing customization of text and HTML</li>
+    <li>Allows dynamic content (inserting variables)</li>
+    <li>Allows the saving of “components”</li>
+</ul>
+{{ end }}
+
+{{ define "title" }}Title{{ end }}
+{{ template "layout" . }}
