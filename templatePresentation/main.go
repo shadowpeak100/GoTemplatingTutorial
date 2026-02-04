@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fs := http.FileServer(http.Dir("./static"))
+	fs := http.FileServer(http.Dir("./templatePresentation/static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	templates, err := loadTemplates()
@@ -19,7 +19,7 @@ func main() {
 
 	http.HandleFunc("/slides/", slideHandler(templates))
 
-	log.Println("serving at http://localhost:8080")
+	log.Println("serving at http://localhost:8080/slides/1")
 	http.ListenAndServe("127.0.0.1:8080", nil)
 }
 
@@ -56,17 +56,20 @@ type Templates struct {
 }
 
 func loadTemplates() (*Templates, error) {
-	layout := "templates/layout.html"
-	navigation := "templates/navbar.html"
+	layout := "templatePresentation/templates/layout.html"
+	navigation := "templatePresentation/templates/navbar.html"
 
 	slideFiles := []string{
-		"templates/titleSlide.html",
-		"templates/whatIsTemplating.html",
-		"templates/whyTemplating.html",
-		"templates/templateExampleWithNoData.html",
-		//"templates/addingDataIntoTemplating.html",
-		//"templates/passingFunctionsThroughTemplating.html",
-		//"templates/AConvenientWayToOrganizeTemplates.html",
+		"templatePresentation/templates/titleSlide.html",
+		"templatePresentation/templates/whatIsTemplating.html",
+		"templatePresentation/templates/whyTemplating.html",
+		"templatePresentation/templates/templateExampleWithNoData.html",
+		"templatePresentation/templates/addingDataIntoTemplating.html",
+		"templatePresentation/templates/passingFunctionsThroughTemplating.html",
+		"templatePresentation/templates/malViewerDemo.html",
+		"templatePresentation/templates/theEnd.html",
+		"templatePresentation/templates/deceived.html",
+		"templatePresentation/templates/realEnd.html",
 	}
 
 	slides := make([]*template.Template, 0, len(slideFiles))

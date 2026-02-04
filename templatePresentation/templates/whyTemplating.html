@@ -1,10 +1,17 @@
 {{ define "content" }}
-<h1>Why use it?</h1>
-<ul>
-    <li>When using HTML, get protection against code injection</li>
-    <li>Both Text and HTML templating use the same interface (HTML is a wrapper around text templating)</li>
-</ul>
-{{ end }}
+<div class="slide slide-two-col">
 
-{{ define "title" }}Title{{ end }}
-{{ template "layout" . }}
+    <h1>Why use it?</h1>
+
+    <div class="columns">
+        <div class="col text">
+            <ul>
+                <li>When using HTML, get protection against code injection</li>
+                <li>Both Text and HTML templating use the same interface (HTML is a wrapper around text templating)</li>
+                <li>Reassures you that you are a backend developer when you have to do dirty front end work</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+{{ end }}

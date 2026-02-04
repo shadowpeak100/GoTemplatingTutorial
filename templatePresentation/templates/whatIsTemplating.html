@@ -1,11 +1,17 @@
 {{ define "content" }}
-<h1>What is Templating?</h1>
-<ul>
-    <li>A standard library package allowing customization of text and HTML</li>
-    <li>Allows dynamic content (inserting variables)</li>
-    <li>Allows the saving of “components”</li>
-</ul>
-{{ end }}
+<div class="slide slide-two-col">
 
-{{ define "title" }}Title{{ end }}
-{{ template "layout" . }}
+    <h1>What is Templating?</h1>
+
+    <div class="columns">
+        <div class="col text">
+            <ul>
+                <li>A standard library package allowing customization of text and HTML</li>
+                <li>Allows dynamic content (inserting variables)</li>
+                <li>Allows the saving of “components”</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+{{ end }}
